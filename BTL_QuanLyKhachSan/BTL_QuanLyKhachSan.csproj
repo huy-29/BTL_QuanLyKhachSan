@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59C9560C-210F-4F96-AFD5-EE7A62762EDE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BTL_QuanLyKhachSan</RootNamespace>
+    <AssemblyName>BTL_QuanLyKhachSan</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\DangNhapDAO.cs" />
+    <Compile Include="DTO\DangNhap.cs" />
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DatPhongDAO.cs" />
+    <Compile Include="DAO\ThanhToanDAO.cs" />
+    <Compile Include="DAO\LoaiPhongDAO.cs" />
+    <Compile Include="DAO\MucGiaDAO.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DAO\SoDoPhongDAO.cs" />
+    <Compile Include="DAO\TangDAO.cs" />
+    <Compile Include="DAO\ThuePhongDAO.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\LoaiPhong.cs" />
+    <Compile Include="DTO\MucGia.cs" />
+    <Compile Include="DTO\Phong.cs" />
+    <Compile Include="DTO\Tang.cs" />
+    <Compile Include="DTO\ThanhToan.cs" />
+    <Compile Include="DTO\ThanhToanPhu.cs" />
+    <Compile Include="DTO\ThuePhong.cs" />
+    <Compile Include="frMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frMain.Designer.cs">
+      <DependentUpon>frMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\DanhMuc\UC_CaiDatChung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\UC_CaiDatChung.Designer.cs">
+      <DependentUpon>UC_CaiDatChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_CauHinhKS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_CauHinhKS.Designer.cs">
+      <DependentUpon>UC_CauHinhKS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachLoaiPhong.Designer.cs">
+      <DependentUpon>UC_DanhSachLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachPhong.Designer.cs">
+      <DependentUpon>UC_DanhSachPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachTang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachTang.Designer.cs">
+      <DependentUpon>UC_DanhSachTang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UpdateLoaiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\CauHinhKS\UpdateLoaiPhong.Designer.cs">
+      <DependentUpon>UpdateLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\UC_GiaTheoThoiDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\UC_GiaTheoThoiDiem.Designer.cs">
+      <DependentUpon>UC_GiaTheoThoiDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\UpdateMucGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\DanhMuc\UpdateMucGia.Designer.cs">
+      <DependentUpon>UpdateMucGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NhanVien\UC_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NhanVien\UC_NhanVien.Designer.cs">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateChuyenPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateChuyenPhong.Designer.cs">
+      <DependentUpon>UpdateChuyenPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_DanhSachDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_DanhSachDatPhong.Designer.cs">
+      <DependentUpon>UC_DanhSachDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_DanhSachThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_DanhSachThuePhong.Designer.cs">
+      <DependentUpon>UC_DanhSachThuePhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_SoDoPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UC_SoDoPhong.Designer.cs">
+      <DependentUpon>UC_SoDoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateHoaDon.Designer.cs">
+      <DependentUpon>UpdateHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateNhanPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\QuanLyPhong\UpdateNhanPhong.Designer.cs">
+      <DependentUpon>UpdateNhanPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_CachTinhChiPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_CachTinhChiPhi.Designer.cs">
+      <DependentUpon>UC_CachTinhChiPhi.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frMain.resx">
+      <DependentUpon>frMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\DanhMuc\UC_CaiDatChung.resx">
+      <DependentUpon>UC_CaiDatChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\CauHinhKS\UC_CauHinhKS.resx">
+      <DependentUpon>UC_CauHinhKS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachLoaiPhong.resx">
+      <DependentUpon>UC_DanhSachLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachPhong.resx">
+      <DependentUpon>UC_DanhSachPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\CauHinhKS\UC_DanhSachTang.resx">
+      <DependentUpon>UC_DanhSachTang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\CauHinhKS\UpdateLoaiPhong.resx">
+      <DependentUpon>UpdateLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\UC_GiaTheoThoiDiem.resx">
+      <DependentUpon>UC_GiaTheoThoiDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\DanhMuc\UpdateMucGia.resx">
+      <DependentUpon>UpdateMucGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NhanVien\UC_NhanVien.resx">
+      <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UpdateChuyenPhong.resx">
+      <DependentUpon>UpdateChuyenPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UC_DanhSachDatPhong.resx">
+      <DependentUpon>UC_DanhSachDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UC_DanhSachThuePhong.resx">
+      <DependentUpon>UC_DanhSachThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UC_SoDoPhong.resx">
+      <DependentUpon>UC_SoDoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UpdateHoaDon.resx">
+      <DependentUpon>UpdateHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\QuanLyPhong\UpdateNhanPhong.resx">
+      <DependentUpon>UpdateNhanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_CachTinhChiPhi.resx">
+      <DependentUpon>UC_CachTinhChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
