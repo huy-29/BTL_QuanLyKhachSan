@@ -33,6 +33,9 @@ namespace BTL_QuanLyKhachSan.UserControls.QuanLyPhong
         void LoadSoDoPhongTheoList(List<Phong> list)
         {
             flpPhong.Controls.Clear();
+
+            int i = 3;
+
             foreach(Phong item in list)
             {
                 string soTang = "";
@@ -61,6 +64,9 @@ namespace BTL_QuanLyKhachSan.UserControls.QuanLyPhong
 
                 string name = string.Format(item.MaPhong + "\n" + item.TrangThai + "\nTầng: " + soTang + "\nSố người: " + soNguoi);
                 btn.Text = name;
+
+                btn.TabIndex = i;
+                i++;
 
                 //btn.ForeColor = Color.White;
                 ContextMenuStrip cms = new ContextMenuStrip();
@@ -210,19 +216,52 @@ namespace BTL_QuanLyKhachSan.UserControls.QuanLyPhong
             //}
             LoadSoDoPhongTheoComboBox();
         }
+
+        public delegate void delTraPhong(string TP);
         private void TraPhong_click(object sender, EventArgs e)
         {
-            
+            string P = ((sender as ToolStripButton).Tag as Phong).MaPhong;
+            string TP = SoDoPhongDAO.Instance.GetMaThuePhongHienTaiByMaPhong(P);
+
+            UpdateHoaDon f = new UpdateHoaDon();
+            delTraPhong del = new delTraPhong(f.TinhHoaDon);
+            del(TP);
+            f.ShowDialog();
+            LoadSoDoPhongTheoComboBox();
         }
 
+        public delegate void delChuyenPhong(string P, string newP);
         private void ChuyenPhong_click(object sender, EventArgs e)
         {
-            
+            string P = ((sender as ToolStripButton).Tag as Phong).MaPhong;
+            DateTime CheckOut = SoDoPhongDAO.Instance.GetCheckOutByMaPhongDangThue(P);
+
+            if (CheckOut > DateTime.Now)
+            {
+                UpdateChuyenPhong f = new UpdateChuyenPhong();
+                delChuyenPhong del = new delChuyenPhong(f.ChuyenPhong);
+                del(P, "");
+                f.ShowDialog();
+                LoadSoDoPhongTheoComboBox();
+            }
+            else if (CheckOut <= DateTime.Now)
+            {
+                MessageBox.Show("Phòng đã quá hạn check-out. Vui lòng thanh toán");
+            }
         }
 
         private void SuaThongTin_click(object sender, EventArgs e)
         {
-            
+            string P = ((sender as ToolStripButton).Tag as Phong).MaPhong;
+            string TP = SoDoPhongDAO.Instance.GetMaThuePhongHienTaiByMaPhong(P);
+            string KH = DatPhongDAO.Instance.GetMaKhachHangByMaTP(TP);
+
+            UpdateNhanPhong f = new UpdateNhanPhong();
+            delThuePhong del = new delThuePhong(f.NhanPhong);
+            del(P, TP, KH, "Sửa thuê phòng");
+            f.ShowDialog();
+            LoadSoDoPhongTheoComboBox();
+
         }
 
 

@@ -68,7 +68,7 @@
             this.cbTrangThai.Location = new System.Drawing.Point(96, 24);
             this.cbTrangThai.Name = "cbTrangThai";
             this.cbTrangThai.Size = new System.Drawing.Size(143, 21);
-            this.cbTrangThai.TabIndex = 2;
+            this.cbTrangThai.TabIndex = 1;
             this.cbTrangThai.SelectedIndexChanged += new System.EventHandler(this.cbTrangThai_SelectedIndexChanged);
             // 
             // cbLoaiPhong
@@ -77,7 +77,7 @@
             this.cbLoaiPhong.Location = new System.Drawing.Point(370, 24);
             this.cbLoaiPhong.Name = "cbLoaiPhong";
             this.cbLoaiPhong.Size = new System.Drawing.Size(159, 21);
-            this.cbLoaiPhong.TabIndex = 4;
+            this.cbLoaiPhong.TabIndex = 2;
             this.cbLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cbLoaiPhong_SelectedIndexChanged);
             // 
             // lblLoaiPhong
@@ -96,7 +96,7 @@
             this.cbTang.Location = new System.Drawing.Point(655, 25);
             this.cbTang.Name = "cbTang";
             this.cbTang.Size = new System.Drawing.Size(121, 21);
-            this.cbTang.TabIndex = 6;
+            this.cbTang.TabIndex = 3;
             this.cbTang.SelectedIndexChanged += new System.EventHandler(this.cbTang_SelectedIndexChanged);
             // 
             // lblTang

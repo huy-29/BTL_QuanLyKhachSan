@@ -62,8 +62,6 @@
             this.tvMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvMenu.ForeColor = System.Drawing.SystemColors.MenuText;
             this.tvMenu.FullRowSelect = true;
-            this.tvMenu.ImageIndex = 0;
-            this.tvMenu.ImageList = this.imageList1;
             this.tvMenu.Indent = 30;
             this.tvMenu.ItemHeight = 50;
             this.tvMenu.Location = new System.Drawing.Point(0, 37);

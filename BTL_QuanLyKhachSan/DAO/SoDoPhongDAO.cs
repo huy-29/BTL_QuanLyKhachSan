@@ -216,6 +216,20 @@ namespace BTL_QuanLyKhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public string GetMaThuePhongHienTaiByMaPhong(string P)
+        {
+            string query = string.Format("SELECT MaThuePhong FROM dbo.ThuePhong WHERE MaPhong = '{0}' AND TienDat = 0", P);
+            string TP = DataProvider.Instance.ExecuteScalar(query).ToString();
+            return TP;
+        }
+
+        public DateTime GetCheckOutByMaPhongDangThue(string P)
+        {
+            string query = string.Format("SELECT NgayCheckOut FROM dbo.ThuePhong WHERE MaPhong = '{0}' AND TienDat = 0", P);
+            DateTime CheckOut = Convert.ToDateTime(DataProvider.Instance.ExecuteScalar(query));
+            return CheckOut;
+        }
     }
 }
 
