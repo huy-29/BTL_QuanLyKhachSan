@@ -339,7 +339,7 @@ namespace BTL_QuanLyKhachSan.UserControls.NhanVien
             else if (Check() == 3)
             {
                 lblCheck_MatKhau.Visible = true;
-                lblMatKhau.Text = "Mật khẩu mới trùng với mật khẩu cũ";
+                lblCheck_MatKhau.Text = "Mật khẩu mới trùng với mật khẩu cũ";
             }
             else if (Check() == 4)
             {
