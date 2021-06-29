@@ -303,7 +303,7 @@
             // 
             // txbMaxNgay
             // 
-            this.txbMaxNgay.Location = new System.Drawing.Point(297, 121);
+            this.txbMaxNgay.Location = new System.Drawing.Point(297, 118);
             this.txbMaxNgay.MaxLength = 10;
             this.txbMaxNgay.Name = "txbMaxNgay";
             this.txbMaxNgay.Size = new System.Drawing.Size(116, 20);
@@ -333,7 +333,7 @@
             // 
             this.lblMaxGio.AutoSize = true;
             this.lblMaxGio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxGio.Location = new System.Drawing.Point(256, 85);
+            this.lblMaxGio.Location = new System.Drawing.Point(257, 83);
             this.lblMaxGio.Name = "lblMaxGio";
             this.lblMaxGio.Size = new System.Drawing.Size(35, 16);
             this.lblMaxGio.TabIndex = 68;
@@ -351,7 +351,7 @@
             // 
             // txbMaxGio
             // 
-            this.txbMaxGio.Location = new System.Drawing.Point(298, 85);
+            this.txbMaxGio.Location = new System.Drawing.Point(297, 82);
             this.txbMaxGio.MaxLength = 10;
             this.txbMaxGio.Name = "txbMaxGio";
             this.txbMaxGio.Size = new System.Drawing.Size(116, 20);
