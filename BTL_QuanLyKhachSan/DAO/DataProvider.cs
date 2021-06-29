@@ -19,7 +19,7 @@ namespace QuanLyThuHocPhi.DAO
         }
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=./;Initial Catalog=QuanLyKhachSan_TTN;Integrated Security=True";
+        private string connectionSTR = @"Data Source=ADMIN;Initial Catalog=QuanLyKhachSan_TTN;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
