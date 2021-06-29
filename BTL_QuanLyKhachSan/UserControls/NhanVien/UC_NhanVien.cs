@@ -38,7 +38,7 @@ namespace BTL_QuanLyKhachSan.UserControls.NhanVien
             flpThongTin.Visible = false;
         }
 
-        void EnableButton(int them, int sua, int xoa)
+        void EnableButton(int them, int sua, int xoa)     //enable button
         {
             if(flpThongTin.Visible == false)
             {
@@ -64,7 +64,7 @@ namespace BTL_QuanLyKhachSan.UserControls.NhanVien
             }
         }
 
-        private void lvNhanVien_ItemChecked(object sender, ItemCheckedEventArgs e)
+        private void lvNhanVien_ItemChecked(object sender, ItemCheckedEventArgs e)  
         {
             if (lvNhanVien.CheckedItems.Count == 0)
             {
@@ -90,7 +90,7 @@ namespace BTL_QuanLyKhachSan.UserControls.NhanVien
             }
         }
 
-        void LoadListView()
+        void LoadListView()    // Load list
         {
             List<DangNhap> list = DangNhapDAO.Instance.GetListTaiKhoan();
             LoadListViewByListDangNhap(list);
@@ -109,7 +109,7 @@ namespace BTL_QuanLyKhachSan.UserControls.NhanVien
             }
         }
 
-        void LoadComboboxTimKiemChucVu()
+        void LoadComboboxTimKiemChucVu()  // load combo box tim kiem
         {
             cbTimChucVu.Items.Clear();
 

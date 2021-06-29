@@ -20,7 +20,7 @@ namespace BTL_QuanLyKhachSan.DAO
         }
         private DangNhapDAO() { }
 
-        public bool Login(string username, string password)
+        public bool Login(string username, string password)  // Dang Nhap
         {
             //string query = string.Format("EXEC dbo.DangNhapTaiKhoan @TK = '{0}', @MK = '{1}'", username, password);
 
@@ -29,7 +29,7 @@ namespace BTL_QuanLyKhachSan.DAO
             return data.Rows.Count > 0;
         }
 
-        public DangNhap GetTaiKhoanByUsername(string username)
+        public DangNhap GetTaiKhoanByUsername(string username)  // Lay tai khoan theo ten username
         {
             string query = string.Format("SELECT * FROM dbo.DangNhap WHERE TaiKhoan = '{0}'", username);
 
@@ -42,7 +42,7 @@ namespace BTL_QuanLyKhachSan.DAO
             return null;
         }
 
-        public List<DangNhap> GetListTaiKhoan()
+        public List<DangNhap> GetListTaiKhoan()  // Lay danh sach tai khoan
         {
             List<DangNhap> list = new List<DangNhap>();
 
@@ -74,7 +74,7 @@ namespace BTL_QuanLyKhachSan.DAO
             return list;
         }
 
-        public bool XoaTaiKhoan(string username)
+        public bool XoaTaiKhoan(string username)   // Xoa tai khoan
         {
             string query = string.Format("DELETE dbo.DangNhap WHERE TaiKhoan = '{0}'", username);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
@@ -82,7 +82,7 @@ namespace BTL_QuanLyKhachSan.DAO
             return result > 0;
         }
 
-        public void UpdateTaiKhoan(string username, string password, string hoTen, string chucVu)
+        public void UpdateTaiKhoan(string username, string password, string hoTen, string chucVu)  // Cap nhat tai khoan
         {
             DataProvider.Instance.ExecuteNonQuery("EXEC dbo.UpdateTaiKhoan @username , @password , @hoTen , @chucVu  ", new object[] { username, password, hoTen, chucVu });
         }
@@ -100,7 +100,7 @@ namespace BTL_QuanLyKhachSan.DAO
             }
             return list;
         }
-        public List<DangNhap> TimKiemAll(string tk, string chucVu)
+        public List<DangNhap> TimKiemAll(string tk, string chucVu)     // Tim kiem tat ca
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("EXEC dbo.TimKiemAll @tk , @chucVu = ", new object[] { tk, chucVu });
 
